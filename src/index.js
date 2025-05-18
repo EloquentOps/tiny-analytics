@@ -26,15 +26,15 @@ function createTinybirdAnalytics({
   // collect the standard payload
   function collect() {
     return {
-      url:             window.location.href,
+      url:             window.location.href || 'no url',
       referrer:        document.referrer || 'no referrer',
-      title:           document.title,
-      userAgent:       navigator.userAgent,
-      language:        navigator.language,
-      screenWidth:     window.screen.width,
-      screenHeight:    window.screen.height,
-      viewportWidth:   window.innerWidth,
-      viewportHeight:  window.innerHeight,
+      title:           document.title || 'no title',
+      userAgent:       navigator.userAgent || 'no user agent',
+      language:        navigator.language || 'no language',
+      screenWidth:     window.screen.width || 'no screen width',
+      screenHeight:    window.screen.height || 'no screen height',
+      viewportWidth:   window.innerWidth || 'no viewport width',
+      viewportHeight:  window.innerHeight || 'no viewport height',
       timestamp:       new Date().toISOString(),
     };
   }
