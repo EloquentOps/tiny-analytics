@@ -1,6 +1,6 @@
 {
     "name": "@eloquentops/tiny-analytics",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tiny Analytics",
     "main": "dist/EoTinyAnalytics.min.js",
     "unpkg": "dist/EoTinyAnalytics.min.js",
