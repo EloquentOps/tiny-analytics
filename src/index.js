@@ -27,7 +27,7 @@ function createTinybirdAnalytics({
   function collect() {
     return {
       url:             window.location.href,
-      referrer:        document.referrer || null,
+      referrer:        document.referrer || 'no referrer',
       title:           document.title,
       userAgent:       navigator.userAgent,
       language:        navigator.language,
