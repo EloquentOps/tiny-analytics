@@ -48,9 +48,18 @@ function createTinybirdAnalytics({
       os = 'iOS';
       const match = ua.match(/CPU OS ([0-9_]+)/);
       osVersion = match ? match[1].replace(/_/g, '.') : '';
+    } else if (/Linux/.test(ua)) {
+      os = 'Linux';
+      // Optionally, try to extract architecture (e.g., x86_64)
+      const match = ua.match(/Linux ([^;\)]+)/);
+      osVersion = match ? match[1] : '';
     }
     // Browser
-    if (/Chrome\//.test(ua) && !/Edge\//.test(ua) && !/OPR\//.test(ua)) {
+    if (/HeadlessChrome\//.test(ua)) {
+      browser = 'HeadlessChrome';
+      const match = ua.match(/HeadlessChrome\/([0-9.]+)/);
+      browserVersion = match ? match[1] : '';
+    } else if (/Chrome\//.test(ua) && !/Edge\//.test(ua) && !/OPR\//.test(ua)) {
       browser = 'Chrome';
       const match = ua.match(/Chrome\/([0-9.]+)/);
       browserVersion = match ? match[1] : '';
