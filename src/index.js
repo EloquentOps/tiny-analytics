@@ -112,7 +112,6 @@ function createTinybirdAnalytics({
   }
 
   // auto-fire pageview event
-  console.log('collecting pageview event', collect());
   send(collect());
 
   return { collect, send };
